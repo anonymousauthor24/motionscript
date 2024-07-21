@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>MotionScript</title>
+  <meta name="description" content="Project page for MotionScript.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <meta charset="utf-8">
+
+  <!-- Facebook preview
+  <meta property="og:image" content="https://imagine.enpc.fr/~monniert/DTIClustering/thumbnail.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="600">
+  <meta property="og:image:height" content="400">
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://imagine.enpc.fr/~monniert/DTIClustering/"/>
+  <meta property="og:title" content="DTI Clustering"/>
+  <meta property="og:description" content="Project page for Deep Transformation-Invariant Clustering."/>
+  -->
+
+  <!--Twitter preview
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DTI Clustering" />
+  <meta name="twitter:description" content="Project page for Deep Transformation-Invariant Clustering."/>
+  <meta name="twitter:image" content="https://imagine.enpc.fr/~monniert/DTIClustering/thumbnail_twitter.png">
+  -->
+
+  <!--Style-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="style.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div class="container" style="text-align:center; padding:2rem 15px">
+  <div class="row" style="text-align:center">
+    <h1>MotionScript: Natural Language Descriptions for Expressive 3D Human Motions</h1>
+    <h4>Foundation Models for 3D Humans ECCV 2024 Workshop</h4>
+  </div>
+  <div class="row" style="text-align:center">
+    <div class="col-xs-0 col-md-3"></div>
+    <div class="col-xs-12 col-md-6">
+      <h4>
+        <nobr>Anonymous Authors</nobr><sup></sup> &emsp;
+        
+        <!--
+        <a href="https://imagine.enpc.fr/~monniert/"><nobr>Tom Monnier</nobr></a> &emsp;
+        <a href="https://imagine.enpc.fr/~groueixt/"><nobr>Thibault Groueix</nobr></a> &emsp;
+        <a href="https://imagine.enpc.fr/~aubrym/"><nobr>Mathieu Aubry</nobr></a>
+        -->
+      </h4>
+      ---
+    </div>
+    <!-- Link to Arxiv/PDF -->
+    
+    <!-- Link to GitHub -->
+    
+  </div>
+</div>
+
+<div class="container" style="text-align:center; padding:1rem">
+  <div class="row" style="display: flex; text-align: left; align-items: center;">
+      <div class="col-xs-6">
+        <h4><u>Original Caption</u></h4>
+        <p>
+          The human is doing a dance pose and is doing a performance.
+        </p>
+        <br>
+        <h4><u>MotionScript Enhanced Caption</u></h4>
+        <p>
+          The left elbow raises from under the right one to above the right one. Her right hand moves farther from the left elbow. It moves to behind. Moments prior, both elbows are rather bent and then, her elbows extend and very quickly. Simultaneously, her right foot shifts from the right side of her right hip to the left side of the right hip. At the same time, she shifts to the right and shifts slightly backward. She shifts forward, and leans slightly into his left very fast. A few seconds earlier, the left foot raises from under the right one to above the right one. Both elbows are spread apart with the left knee and the left elbow bent slightly and with that pose, the left elbow bends and rapidly and it moves nearer to the right one. Not long after, her left elbow moves farther from the right one. Just before, her elbows are at right angle with both knees partially bent. From this stance, her right elbow and her left knee extend and rapidly. A second later, she leans slightly into his right. Right after, the left elbow is bent at near a 90 degree angle. Then, her left elbow extends.
+        </p>
+    </div>
+    <div class="col-xs-6">
+      <img src="asset/example/292.gif" alt="teaser image showing an avatar dancing" class="text-center" style="width: 100%; max-width: 1100px">
+    </div>
+  </div>
+  <!-- Links to external resources -->
+  
+</div>
+
+<div class="container">
+  <h2>Abstract</h2>
+  <hr/>
+  <p>
+	This paper proposes MotionScript, a motion-to-text conversion algorithm and natural language representation for human body motions. MotionScript aims to describe movements in greater detail and with more accuracy than previous natural language approaches. Many motion datasets describe relatively objective and simple actions with little variation on the way they are expressed (e.g. sitting, walking, dribbling a ball). But for expressive actions that contain a diversity of movements in the class (e.g. being sad, dancing), or for actions outside the domain of standard motion capture datasets (e.g. stylistic walking, sign-language, interactions with animals), more specific and granular natural language descriptions are needed. Our proposed MotionScript descriptions differ from existing natural language representations in that it provides direct descriptions in natural language instead of simple action labels or high-level human captions. To the best of our knowledge, this is the first attempt at translating 3D motions to natural language descriptions without requiring training data. Our experiments show that when MotionScript representations are used in a text-to-motion neural task, large language models can be used to generate unseen complex motions.
+  </p>
+
+  <h2>Video</h2>
+  <hr/>
+  <p>TBA</p>
+  <!--
+  <div class="row" style="text-align:center">
+
+    <div class="col-xs-6 text-center">
+      <h4><u>Short presentation</u> (3min)</h4>
+      <div class="embed-responsive embed-responsive-16by9" style="text-align:center">
+        <iframe class="embed-responsive-item text-center" src="https://www.youtube.com/embed/j20MBc1hWGQ" frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          style="width:100%; clip-path:inset(1px 1px);" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="col-xs-6 text-center">
+      <h4><u>Long presentation</u> (11min)</h4>
+      <div class="embed-responsive embed-responsive-16by9" style="text-align:center">
+        <iframe class="embed-responsive-item text-center" src="https://www.youtube.com/embed/xhLUOh5PKBA" frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          style="width:100%; clip-path:inset(1px 1px);" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+  -->
+
+  <h2>Approach</h2>
+  <hr/>
+  <img src="asset/framework_2.png" alt="image showing framework of how MotionScript works" class="text-center" style="width: 100%; max-width: 1200px">
+  <p>The process of generating textual representation of human motions is synthesized directly from 3D skeleton sequences. First <i>posecodes</i>, a quantifiable representation of static pose attributes, are extracted. Next, temporal changes are evaluated in <i>posecodes</i> over time to capture the dynamic aspect of motions in a categorical form. Finally, a methodology that identifies <i>motioncodes</i>, a novel representation of movement patterns, is applied. Afterwards, a selection process is applied on the detected <i>motioncodes</i> to filter out redundant information and aggregate them to convert the <i>motioncodes</i> into concise and coherent natural language sentences.</p>
+  <!--
+  <div class="row" style="text-align: center">
+    <div class="col-xs-6">
+      <h4 style="margin-right: 20%"><u>DTI framework</u></h4>
+    </div>
+    <div class="col-xs-6">
+      <h4><u>Deep transformation module
+          <img src="http://latex.codecogs.com/svg.latex?\mathcal{T}_{f_{k}}" alt="T_f_k" border="0"/></u></h4>
+    </div>
+  </div>
+  <div class="row" style="text-align: center">
+    <div class="col-xs-6">
+      <img src="resrc/dti.png" alt="dti.png" class="text-center" style="width: 100%; max-width: 900px">
+    </div>
+    <div class="col-xs-6">
+      <img src="resrc/deep_tsf.png" alt="deep_tsf.png" class="text-center" style="width: 90%; max-width: 900px; margin-top:
+      10px">
+    </div>
+  </div>
+  <div class="row" style="text-align: center">
+    <div class="col-xs-6">
+      <div style="width: 90%; max-width: 900px; padding-top:10px">
+      <p>Given a sample <img src="http://latex.codecogs.com/svg.latex?x_i" alt="x_i" border="0"/> and prototypes 
+      <img src="http://latex.codecogs.com/svg.latex?c_1" alt="c_1" border="0"/> and 
+      <img src="http://latex.codecogs.com/svg.latex?c_2" alt="c_2" border="0"/>, standard clustering such as K-means 
+      assigns the sample to the closest prototype. Our DTI clustering first aligns prototypes to the sample using a
+      family of parametric transformations - here rotations - then picks the prototype whose alignment yields the 
+      smallest distance.</p>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div style="width: 100%; max-width: 900px; padding-top:10px">
+        <p>We predict alignment with deep learning. Given an image 
+      <img src="http://latex.codecogs.com/svg.latex?x_i" alt="x_i" border="0"/>, each deep parameter predictor 
+      <img src="http://latex.codecogs.com/svg.latex?f_k" alt="f_k" border="0"/> predicts 
+      parameters for a sequence of transformations - here affine, morphological and thin plate spline transformations -
+      to align the prototype <img src="http://latex.codecogs.com/svg.latex?c_k" alt="c_k" border="0"/>
+      to the query image <img src="http://latex.codecogs.com/svg.latex?x_i" alt="x_i" border="0"/>.</p>
+      </div>
+    </div>
+  </div>
+  -->
+
+  <h2>Results</h2>
+  <hr/>
+  <br/>
+
+  <h3>Dancing</h3>
+  <hr style="height: 2px; border: none; color: #808080; background-color: #808080;"/>
+  <br/>
+
+  <div class="row" style="display: flex; align-items: center; text-align: left; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+    <div class="col-xs-6">
+      <h4><u>Original Caption</u></h4>
+      <p>
+        The body is in a dancing action while doing a performance.
+      </p>
+      <br>
+      <h4><u>MotionScript Enhanced Caption</u></h4>
+      <p>
+        The left elbow advances from behind the right one to in front of the right one. At the same time, she moves a great distance to the right. Meanwhile, she moves a bit downwards. At the same time, the right hand moves from behind the left one to a position in front of the left one and comes significantly closer to the left knee. She moves slightly downwards speedily. Simultaneously, she shifts forward.      </p>
+    </div>
+    <div class="col-xs-6">
+      <img src="asset/example/27.gif" alt="teaser image showing an avatar dancing" class="text-center" style="width: 100%; max-width: 1100px">
+    </div>
+  </div>
+
+  <div class="row" style="display: flex; align-items: center; text-align: left; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+    <div class="col-xs-6">
+      <h4><u>Original Caption</u></h4>
+      <p>
+        The person is performing while in a dancing action.
+      </p>
+      <br>
+      <h4><u>MotionScript Enhanced Caption</u></h4>
+      <p>
+        She shifts a great distance backward rapidly. The left hand lifts from below the neck ascending to above the neck. She shifts slightly downwards and a second later, she shifts to the right just a little bit. In the second right before, both knees are bent slightly and from this position, her right knee bends and speedily. Meanwhile, her left elbow is almost completely bent and from this stance, her left elbow extends.
+    </div>
+    <div class="col-xs-6">
+      <img src="asset/example/65.gif" alt="teaser image showing an avatar dancing" class="text-center" style="width: 100%; max-width: 1100px">
+    </div>
+  </div>
+
+  <div class="row" style="display: flex; align-items: center; text-align: left; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+    <div class="col-xs-6">
+      <h4><u>Original Caption</u></h4>
+      <p>
+        This person is going backwards and is dancing.
+      </p>
+      <br>
+      <h4><u>MotionScript Enhanced Caption</u></h4>
+      <p>
+        The right hand moves nearer to the right foot. Immediately after, he moves a great distance backward quickly. Right after, the left hand raises from below his neck to above his neck.
+      </p>
+    </div>
+    <div class="col-xs-6">
+      <img src="asset/example/82.gif" alt="teaser image showing an avatar dancing" class="text-center" style="width: 100%; max-width: 1100px">
+    </div>
+  </div>
+
+  <div class="row" style="display: flex; align-items: center; text-align: left; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+    <div class="col-xs-6">
+      <h4><u>Original Caption</u></h4>
+      <p>
+        The subject is performing while making a dance pose.
+      </p>
+      <br>
+      <h4><u>MotionScript Enhanced Caption</u></h4>
+      <p>
+        He moves forward and not long after, moves backward.
+      </p>
+    </div>
+    <div class="col-xs-6">
+      <img src="asset/example/105.gif" alt="teaser image showing an avatar dancing" class="text-center" style="width: 100%; max-width: 1100px">
+    </div>
+  </div>
+
+  <div class="row" style="display: flex; align-items: center; text-align: left; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+    <div class="col-xs-6">
+      <h4><u>Original Caption</u></h4>
+      <p>
+        Someone is in a dancing action while doing a performance.
+      </p>
+      <br>
+      <h4><u>MotionScript Enhanced Caption</u></h4>
+      <p>
+        He shifts backward just a little bit.
+      </p>
+    </div>
+    <div class="col-xs-6">
+      <img src="asset/example/218.gif" alt="teaser image showing an avatar dancing" class="text-center" style="width: 100%; max-width: 1100px">
+    </div>
+  </div>
+
+  <h3>Exercise</h3>
+  <hr style="height: 2px; border: none; color: #808080; background-color: #808080;"/>
+  <br/>
+
+  <div class="row" style="display: flex; align-items: center; text-align: left; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+    <div class="col-xs-6">
+      <h4><u>Original Caption</u></h4>
+      <p>
+        A person is doing hand exercises while making a dance pose.
+      </p>
+      <br>
+      <h4><u>MotionScript Enhanced Caption</u></h4>
+      <p>
+        The right hand moves from the left side of the right shoulder to the right side of the right shoulder, and not long after, it moves from the right side of the right shoulder to the left side of the right shoulder. In the second right before, the right elbow is ahead of his left elbow and is partly bent, and from this stance, his right elbow extends.
+      </p>
+      </div>
+    <div class="col-xs-6">
+      <img src="asset/example/48.gif" alt="teaser image showing an avatar dancing" class="text-center" style="width: 100%; max-width: 1100px">
+    </div>
+  </div>
+
+  <div class="row" style="display: flex; align-items: center; text-align: left; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+    <div class="col-xs-6">
+      <h4><u>Original Caption</u></h4>
+      <p>
+        The subject is lowering a body part and is making hand exercises.
+      </p>
+      <br>
+      <h4><u>MotionScript Enhanced Caption</u></h4>
+      <p>
+        The elbows are a bit bent, and from that pose, both elbows bend.
+      </p>
+    </div>
+    <div class="col-xs-6">
+      <img src="asset/example/160.gif" alt="teaser image showing an avatar dancing" class="text-center" style="width: 100%; max-width: 1100px">
+    </div>
+  </div>
+
+  <div class="row" style="display: flex; align-items: center; text-align: left; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+    <div class="col-xs-6">
+      <h4><u>Original Caption</u></h4>
+      <p>
+        The human is doing head exercises while looking at something.
+      </p>
+      <br>
+      <h4><u>MotionScript Enhanced Caption</u></h4>
+      <p>
+        She moves downwards just a little bit and rapidly. Meanwhile, the left knee and the left elbow are a bit bent and from this stance, her left knee bends and briskly, and it extends.
+      </p>
+    </div>
+    <div class="col-xs-6">
+      <img src="asset/example/250.gif" alt="teaser image showing an avatar dancing" class="text-center" style="width: 100%; max-width: 1100px">
+    </div>
+  </div>
+
+ 
+</pre>
+      </div>
+    </div>
+
+<!--
+  <h3>Further information</h3>
+  <hr/>
+  If you like this project, please check out other related works from our group:
+  <h4>Follow-ups</h4>
+  <ul>
+    <li>
+      <a href="https://arxiv.org/abs/2104.14575">Monnier et al. - Unsupervised Layered Image Decomposition into Object
+        Prototypes (arXiv 2021)</a>
+    </li>
+  </ul>
+
+  <h4>Previous works on deep transformations</h4>
+  <ul>
+    <li>
+      <a href="https://arxiv.org/abs/1908.04725">Deprelle et al. - Learning elementary structures for 3D shape
+        generation and matching (NeurIPS 2019)</a>
+    </li>
+    <li>
+      <a href="https://arxiv.org/abs/1806.05228">Groueix et al. - 3D-CODED: 3D Correspondences by Deep Deformation (ECCV
+        2018)</a>
+    </li>
+    <li>
+      <a href="https://arxiv.org/abs/1802.05384">Groueix et al. - AtlasNet: A Papier-Mache Approach to Learning 3D
+        Surface Generation (CVPR 2018)</a>
+    </li>
+  </ul>
+
+  <h3>Acknowledgements</h3>
+  <hr/>
+  <p>
+    This work was supported in part by <a href="https://enherit.enpc.fr/">ANR project EnHerit</a> ANR-17-CE23-0008,
+    project Rapid Tabasco, gifts  from  Adobe and HPC resources from GENCI-IDRIS (Grant 2020-AD011011697). We thank 
+    Bryan Russell, Vladimir Kim, Matthew Fisher, Fran&#231;ois Darmon, Simon Roburin, David Picard, Michael 
+    Ramamonjisoa, Vincent Lepetit, Elliot Vincent, Jean Ponce, William Peebles and Alexei Efros for inspiring 
+    discussions and valuable feedback.
+  </p>
+</div>
+-->
+
+<div class="container" style="padding-top:3rem; padding-bottom:3rem">
+  <p style="text-align:center">
+  &#169; This webpage was in part inspired from this
+  <a href="https://github.com/monniert/project-webpage">template</a>.
+  </p>
+</div>
+
+</body>
+</html>
