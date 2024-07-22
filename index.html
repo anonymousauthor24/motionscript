@@ -87,29 +87,17 @@
   <p>
 	This paper proposes MotionScript, a motion-to-text conversion algorithm and natural language representation for human body motions. MotionScript aims to describe movements in greater detail and with more accuracy than previous natural language approaches. Many motion datasets describe relatively objective and simple actions with little variation on the way they are expressed (e.g. sitting, walking, dribbling a ball). But for expressive actions that contain a diversity of movements in the class (e.g. being sad, dancing), or for actions outside the domain of standard motion capture datasets (e.g. stylistic walking, sign-language, interactions with animals), more specific and granular natural language descriptions are needed. Our proposed MotionScript descriptions differ from existing natural language representations in that it provides direct descriptions in natural language instead of simple action labels or high-level human captions. To the best of our knowledge, this is the first attempt at translating 3D motions to natural language descriptions without requiring training data. Our experiments show that when MotionScript representations are used in a text-to-motion neural task, large language models can be used to generate unseen complex motions.
   </p>
-
-  <head>
-  <style>
-    .video-container {
-      text-align: center;
-    }
-    .video {
-      max-width: 40%;
-      height: auto;
-    }
-  </style>
-</head>
-<body>
-  <h2>Video</h2>
-  <hr/>
-  <div class="video-container">
-    <video class="video" muted controls playsinline>
-      <source src="asset/demo.mp4" type="video/mp4">
+	
+<h2>Video</h2>
+<hr/>
+<div id="video-container" style="text-align: center;">
+    <video id="video" muted controls playsinline style="max-width: 80%; height: auto;">
+        <source src="asset/demo.mp4" type="video/mp4">
     </video>
     <br>
     <span style="font-size:12px">* This video contains audio.</span>
-  </div>
-</body>
+</div>
+  
   <!--
   <div class="row" style="text-align:center">
 
