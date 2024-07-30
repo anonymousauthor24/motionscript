@@ -56,6 +56,13 @@
     <!-- Link to Arxiv/PDF -->
     
     <!-- Link to GitHub -->
+	<!-- Link to Google Drive Gallery -->
+	<div class="hidden-xs hidden-sm col-md-2" style="text-align:left; margin-left:0px;">
+	  <a href="https://drive.google.com/drive/folders/1xsKcx7YbiPVx8LjFgMBNlT3VjrNYaSsz?usp=sharing" style="color:inherit; text-decoration:none;">
+		<img src="asset/gallery.png" alt="Gallery Icon" style="width: 64px; height: 64px;">
+		<div style="font-size: 16px; margin-top: 8px;">Gallery</div>
+	  </a>
+	</div>
     
   </div>
 </div>
@@ -65,16 +72,16 @@
       <div class="col-xs-6">
         <h4><u>Original Caption</u></h4>
         <p>
-          The human is doing a dance pose and is doing a performance.
+          A person goes from a standing position to a bended knee while gesturing.
         </p>
         <br>
         <h4><u>MotionScript Enhanced Caption</u></h4>
         <p>
-          The left elbow raises from under the right one to above the right one. Her right hand moves farther from the left elbow. It moves to behind. Moments prior, both elbows are rather bent and then, her elbows extend and very quickly. Simultaneously, her right foot shifts from the right side of her right hip to the left side of the right hip. At the same time, she shifts to the right and shifts slightly backward. She shifts forward, and leans slightly into his left very fast. A few seconds earlier, the left foot raises from under the right one to above the right one. Both elbows are spread apart with the left knee and the left elbow bent slightly and with that pose, the left elbow bends and rapidly and it moves nearer to the right one. Not long after, her left elbow moves farther from the right one. Just before, her elbows are at right angle with both knees partially bent. From this stance, her right elbow and her left knee extend and rapidly. A second later, she leans slightly into his right. Right after, the left elbow is bent at near a 90 degree angle. Then, her left elbow extends.
-        </p>
+			His left elbow and his left knee are at right angle. From this stance, the left knee extends, and not long after, it bends. Just moments before, both hands are further down than his hips, near to the left ankle. With that pose, his right hand spreads significantly apart from the left ankle and right after, gets closer to the right foot. In the second right before, he moves upwards and in the meantime, moves towards the front. A second later, he shifts far to the left. Simultaneously, both hands spread away from the left foot. Meanwhile, his left hand spreads significantly apart from his left ankle. Shortly after, he shifts downwards and a moment later, he shifts downwards briskly. The right knee is unbent and from that pose, the right knee bends significantly.
+		</p>
     </div>
     <div class="col-xs-6">
-      <img src="asset/example/292.gif" alt="teaser image showing an avatar dancing" class="text-center" style="width: 100%; max-width: 1100px">
+      <img src="asset/example/000263_Merged.gif" alt="teaser image showing an avatar dancing" class="text-center" style="width: 100%; max-width: 1100px">
     </div>
   </div>
   <!-- Links to external resources -->
@@ -87,17 +94,15 @@
   <p>
 	This paper proposes MotionScript, a motion-to-text conversion algorithm and natural language representation for human body motions. MotionScript aims to describe movements in greater detail and with more accuracy than previous natural language approaches. Many motion datasets describe relatively objective and simple actions with little variation on the way they are expressed (e.g. sitting, walking, dribbling a ball). But for expressive actions that contain a diversity of movements in the class (e.g. being sad, dancing), or for actions outside the domain of standard motion capture datasets (e.g. stylistic walking, sign-language, interactions with animals), more specific and granular natural language descriptions are needed. Our proposed MotionScript descriptions differ from existing natural language representations in that it provides direct descriptions in natural language instead of simple action labels or high-level human captions. To the best of our knowledge, this is the first attempt at translating 3D motions to natural language descriptions without requiring training data. Our experiments show that when MotionScript representations are used in a text-to-motion neural task, large language models can be used to generate unseen complex motions.
   </p>
-	
-<h2>Video</h2>
-<hr/>
-<div id="video-container" style="text-align: center;">
-    <video id="video" muted controls playsinline style="max-width: 100%; height: auto;">
-        <source src="asset/demo.mp4" type="video/mp4">
-    </video>
-    <br>
-    <span style="font-size:12px">* This video contains audio.</span>
-</div>
-  
+
+  <h2>Video</h2>
+  <hr/>
+  <div id="video-container">
+      <video id="video" muted controls playsinline>
+        <source src="./static/video/demo.mp4" type="video/mp4">
+      </video>
+      <span style="font-size:12px">* This video contains audio.</span>
+    </div>
   <!--
   <div class="row" style="text-align:center">
 
