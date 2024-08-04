@@ -30,6 +30,56 @@
   <link href="style.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  
+  <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: auto; /* Allow scrolling */
+        }
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px; /* Adjust width as needed */
+            margin: 0 auto; /* Center gallery */
+        }
+        .slide {
+            display: none;
+            width: 100%;
+        }
+        .slide img {
+            width: 50%; /* Resize images to fit half the screen */
+            height: auto;
+        }
+        .caption {
+            font-size: 1.2em; /* Adjust font size as needed */
+        }
+        #navigation {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .dot.active {
+            background-color: #717171;
+        }
+    </style>
+  
+  
+
+	
+	
+	
 
 </head>
 <body>
@@ -177,7 +227,125 @@
   <h2>Results</h2>
   <hr/>
   <br/>
+  
+  
+  
+  <!-- Gallery section -->
+    <section id="gallery-section">
+        <h2>Bridging the Gap Between LLMs and Motions</h2>
+        <p>Explore the generated motions from human descriptions and LLM-generated captions using two different models. The animations are presented in both baseline and augmented forms. T2M-GPT is trained on original captions from the HumanML3D dataset, while T2M-GPT+ is trained with augmented data by MotionScript. LLM-generated captions are created by prompting an LLM to describe human motion.</p>
+        <div class="gallery" id="gallery"></div>
+        <!-- Navigation dots container -->
+        <div id="navigation"></div>
+    </section>
 
+    <script>
+        let currentSlide = 0;
+
+        function parseCSV(data) {
+            const rows = data.split('\n').slice(1);
+            return rows.map(row => {
+                const matches = row.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
+                return matches ? matches.map(field => field.replace(/^"(.*)"$/, '$1')) : [];
+            });
+        }
+
+        fetch('asset/LLM_Examples/captions.csv')
+            .then(response => response.text())
+            .then(data => {
+                console.log("CSV Data Loaded");
+                const rows = parseCSV(data);
+                const gallery = document.getElementById('gallery');
+                const navigation = document.getElementById('navigation');
+
+                if (rows.length === 0) {
+                    console.warn('No data found in CSV.');
+                    return;
+                }
+
+                rows.forEach((columns, index) => {
+                    if (columns.length < 3) {
+                        console.warn(`Skipping malformed row: ${columns}`);
+                        return;
+                    }
+                    const humanDescription = columns[1].trim();
+                    const llmGeneratedCaption = columns[2].trim();
+
+                    const slide = document.createElement('div');
+                    slide.className = 'slide';
+                    slide.innerHTML = `
+                        <table>
+                            <tr>
+                                <td colspan="2" class="caption"><p><strong>Human Description:</strong> ${humanDescription}</p></td>
+                            </tr>
+                            <tr class="gifs-row">
+                                <td class="gif-container">
+                                    <h4>T2M-GPT</h4>
+                                    <img src="asset/LLM_Examples/${columns[0].trim()}_short_BS_3DMesh_pred.gif" alt="Human Description Motion Baseline">
+                                </td>
+                                <td class="gif-container">
+                                    <h4>T2M-GPT+</h4>
+                                    <img src="asset/LLM_Examples/${columns[0].trim()}_short_MS_3DMesh_pred.gif" alt="Human Description Motion Augmented">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="caption"><p><strong>LLM Generated Caption:</strong> ${llmGeneratedCaption}</p></td>
+                            </tr>
+                            <tr class="gifs-row">
+                                <td class="gif-container">
+                                    <h4>T2M-GPT</h4>
+                                    <img src="asset/LLM_Examples/${columns[0].trim()}_long_BS_3DMesh_pred.gif" alt="LLM Generated Motion Baseline">
+                                </td>
+                                <td class="gif-container">
+                                    <h4>T2M-GPT+</h4>
+                                    <img src="asset/LLM_Examples/${columns[0].trim()}_long_MS_3DMesh_pred.gif" alt="LLM Generated Motion Augmented">
+                                </td>
+                            </tr>
+                        </table>
+                    `;
+
+                    gallery.appendChild(slide);
+
+                    // Create navigation dot
+                    const dot = document.createElement('span');
+                    dot.className = 'dot';
+                    dot.addEventListener('click', () => showSlide(index));
+                    navigation.appendChild(dot);
+                });
+
+                showSlide(currentSlide);
+            })
+            .catch(error => {
+                console.error('Error loading CSV file:', error);
+            });
+
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.dot');
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? 'block' : 'none';
+            });
+            dots.forEach((dot, i) => {
+                dot.className = i === index ? 'dot active' : 'dot';
+            });
+        }
+
+        function nextSlide() {
+            const slides = document.querySelectorAll('.slide');
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            const slides = document.querySelectorAll('.slide');
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+    </script>
+
+  
+	
+	
   <h3>Dancing</h3>
   <hr style="height: 2px; border: none; color: #808080; background-color: #808080;"/>
   <br/>
@@ -303,22 +471,7 @@
     </div>
   </div>
 
-  <div class="row" style="display: flex; align-items: center; text-align: left; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
-    <div class="col-xs-6">
-      <h4><u>Original Caption</u></h4>
-      <p>
-        The human is doing head exercises while looking at something.
-      </p>
-      <br>
-      <h4><u>MotionScript Enhanced Caption</u></h4>
-      <p>
-        She moves downwards just a little bit and rapidly. Meanwhile, the left knee and the left elbow are a bit bent and from this stance, her left knee bends and briskly, and it extends.
-      </p>
-    </div>
-    <div class="col-xs-6">
-      <img src="asset/example/250.gif" alt="teaser image showing an avatar dancing" class="text-center" style="width: 100%; max-width: 1100px">
-    </div>
-  </div>
+  
 
  
 </pre>
